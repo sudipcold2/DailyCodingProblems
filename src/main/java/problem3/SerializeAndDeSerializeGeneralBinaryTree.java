@@ -18,7 +18,7 @@ public class SerializeAndDeSerializeGeneralBinaryTree {
 
     private int val;
 
-
+    private Node root;
 
     public SerializeAndDeSerializeGeneralBinaryTree(){
         serializedBT = "";
@@ -71,23 +71,23 @@ public class SerializeAndDeSerializeGeneralBinaryTree {
         }
     }
 
-    public void deSerializeBinaryTree(Node root, ListIterator listIterator){
-        if (listIterator.hasNext()){
+    public Node deSerializeBinaryTree(ListIterator listIterator) {
+        if (listIterator.hasNext()) {
             val = Integer.parseInt(listIterator.next().toString());
-            if(val == -1){
-                return ;
+            if (val == -1) {
+                return null;
 
-            }else{
-                root = new Node(val);
-                deSerializeBinaryTree(root.left, listIterator);
-                deSerializeBinaryTree(root.right, listIterator);
             }
+
+            root = new Node(val);
+            root.setLeft(deSerializeBinaryTree(listIterator));
+            root.setRight(deSerializeBinaryTree(listIterator));
         }
+
+        return root;
+
     }
 
-//    public void deSerializeBinaryTreeWrapper(ListIterator listIterator){
-//        binaryTree.root = deSerializeBinaryTree(binaryTree.root, listIterator);
-//    }
 
     public String getSerializedBT() {
         return serializedBT;
@@ -108,8 +108,6 @@ public class SerializeAndDeSerializeGeneralBinaryTree {
 
         SerializeAndDeSerializeGeneralBinaryTree testSerialize =
                 new SerializeAndDeSerializeGeneralBinaryTree();
-        //testSerialize.serializeBinaryTree(bt.root);
-        //System.out.println(testSerialize.serializedBT);
         testSerialize.setSerializedBTInFile(bt.root);
         List<String> list = new ArrayList<String>();
         String str []= testSerialize.serializedBT.split(" ");
@@ -119,20 +117,8 @@ public class SerializeAndDeSerializeGeneralBinaryTree {
 
         ListIterator iterator = list.listIterator();
 
-        // Traversing the list in forward direction
-        System.out.println("Displaying list elements in forward direction : ");
-
-//        while (iterator.hasNext())
-//            System.out.print(iterator.next() + " ");
-
- //       System.out.println();
-//
-//        System.out.println(iterator.next());
-//        System.out.println(iterator.next());
-//        System.out.println(iterator.hasNext());
-
-        testSerialize.deSerializeBinaryTree(null, iterator);
-        System.out.println(testSerialize.binaryTree.toString());
-
+        BinaryTree btree = new BinaryTree();
+        btree.root = testSerialize.deSerializeBinaryTree(iterator);
+        System.out.println(btree);
     }
 }
