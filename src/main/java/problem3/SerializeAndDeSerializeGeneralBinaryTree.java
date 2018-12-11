@@ -1,47 +1,49 @@
 package problem3;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;
 
 
 public class SerializeAndDeSerializeGeneralBinaryTree {
 
-    private String serializedBT;
+    private String serializedBTString;
 
-    private BinaryTree binaryTree;
+    private BinaryTree deSerializedTree;
 
-    private final String MARKER = "-1 ";
-
-    private int val;
-
+<<<<<<< HEAD
     private Node root;
+=======
+    private final String MARKER;
+
+    private static String val;
+>>>>>>> fb600eafa383c80da381aafdfa2f7de6807ded99
 
     public SerializeAndDeSerializeGeneralBinaryTree(){
-        serializedBT = "";
-        binaryTree = new BinaryTree();
-        val = 0;
+        serializedBTString = "";
+        deSerializedTree = new BinaryTree();
+        val = null;
+        MARKER  = "null ";
 
     }
 
     /**
      * Serialize a Binary Tree
+     *
      * @param n is root of a tree that needs to be serialized
      */
-    private void serializeBinaryTree(Node n){
+    public void serializeBinaryTree(Node n){
         if(n == null){
-            serializedBT = serializedBT + MARKER;
+            serializedBTString = serializedBTString + MARKER;
             return ;
         }
 
-        serializedBT = serializedBT + n.val + " ";
+        serializedBTString = serializedBTString + n.val + " ";
         serializeBinaryTree(n.left);
         serializeBinaryTree(n.right);
     }
 
+<<<<<<< HEAD
     public void setSerializedBTInFile(Node n){
 
         serializeBinaryTree(n);
@@ -109,16 +111,55 @@ public class SerializeAndDeSerializeGeneralBinaryTree {
         SerializeAndDeSerializeGeneralBinaryTree testSerialize =
                 new SerializeAndDeSerializeGeneralBinaryTree();
         testSerialize.setSerializedBTInFile(bt.root);
-        List<String> list = new ArrayList<String>();
-        String str []= testSerialize.serializedBT.split(" ");
-        for(String s : str){
-            list.add(s);
+=======
+    /**
+     * De-Serialize Binary Tree logic
+     *
+     * @param root initially null
+     * @param listIterator the serialized string as an iterator
+     * @return the root node of deserialized binary tree
+     */
+    private static Node deSerializeBT(Node root, ListIterator listIterator){
+        if (listIterator.hasNext()){
+            val = listIterator.next().toString();
+            if(val.equals("null")){
+                return null;
+            }
+            root = new Node(Integer.parseInt(val));
+            root.left = deSerializeBT(root.left, listIterator);
+            root.right = deSerializeBT(root.right, listIterator);
         }
+        return root;
+    }
 
+    /**
+     * Wrapper over deserializedBT
+     *
+     * @param serializedTree serialized btree string
+     * @return
+     */
+    public void deSerializeBinaryTree(String serializedTree){
+>>>>>>> fb600eafa383c80da381aafdfa2f7de6807ded99
+        List<String> list = new ArrayList<String>();
+        String str []= serializedTree.split(" ");
+        Collections.addAll(list, str);
         ListIterator iterator = list.listIterator();
+        //BinaryTree bt = new BinaryTree();
+        deSerializedTree.root = deSerializeBT(null, iterator);
+    }
 
+<<<<<<< HEAD
         BinaryTree btree = new BinaryTree();
         btree.root = testSerialize.deSerializeBinaryTree(iterator);
         System.out.println(btree);
+=======
+    public String getSerializedBTString() {
+        return serializedBTString;
     }
+
+    public BinaryTree getDeSerializedTree() {
+        return deSerializedTree;
+>>>>>>> fb600eafa383c80da381aafdfa2f7de6807ded99
+    }
+
 }
