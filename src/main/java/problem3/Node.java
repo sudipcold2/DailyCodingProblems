@@ -2,8 +2,8 @@ package problem3;
 
 public class Node {
 
-    int val;
-    Node left,right;
+    public int val;
+    public Node left,right;
 
     public Node(int key){
         this.val = key;

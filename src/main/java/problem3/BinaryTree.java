@@ -2,7 +2,7 @@ package problem3;
 
 public class BinaryTree {
 
-    Node root;
+    public Node root;
 
     public BinaryTree(int val){
         this.root = new Node(val);
