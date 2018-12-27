@@ -1,4 +1,4 @@
-package unittest.xorlinkedlistp6;
+package unitTest.xorlinkedlistp6;
 
 import org.junit.Assert;
 import org.junit.Before;
