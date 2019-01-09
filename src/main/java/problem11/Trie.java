@@ -1,9 +1,11 @@
 package problem11;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Trie {
 
@@ -49,6 +51,21 @@ public class Trie {
         }
 
         return ( current != null) && current.isEndOfWord;
+    }
+
+    public Set<String> findSuggestionsWithPrefixStored(final String word){
+        TrieNode current = root;
+        TrieNode node;
+        for(int i = 0; i < word.length(); i++){
+            node = current.children.get(word.charAt(i));
+            if(node.children.isEmpty() && node.isEndOfWord){
+                return new HashSet<>(Arrays.asList(word));
+            }
+            current = node;
+        }
+
+        final Set<String> set = current.phrase.stream().map(key -> word + key).collect(Collectors.toSet());
+        return set;
     }
 
     public Set<String> findSuggestions(String word) {
@@ -101,13 +118,23 @@ public class Trie {
         testTrie.insertInTrie("sudipta");
         testTrie.insertInTrie("sudipTam");
         System.out.println(testTrie.searchEntireWord("sudi"));
+
         final Set<String> set = testTrie.findSuggestions("su");
+
         if(set.isEmpty()){
             System.out.println("no matches found");
         }
+
         for(String str : set){
             System.out.println(str);
         }
+
+        final Set<String> set2 = testTrie.findSuggestionsWithPrefixStored("su");
+
+        for(String str : set){
+            System.out.println(str);
+        }
+
     }
 
 
