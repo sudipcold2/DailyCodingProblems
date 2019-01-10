@@ -32,3 +32,19 @@ def cons(a, b): def pair(f): return f(a, b) return pair Implement car and cdr.
 6.  [Problem 6](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/problem6/ProblemStatement.md) | An XOR linked list is a more memory efficient doubly linked list. Instead of each node holding next and prev fields, it holds a field named both, which is an XOR of the next node and the previous node. Implement an XOR linked list; it has an add(element) which adds the element to the end, and a get(index) which returns the node at index.
 
     [See Solution here](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/problem6/XORLinkedList.java)
+
+7.  [Problem 7](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/problem7/ProblemStatement.md) | Given the mapping a = 1, b = 2, ... z = 26, and an encoded message, count the number of ways it can be decoded.
+
+    [See Solution here](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/problem7/NoOfWaysToDecode.java)
+
+8.  [Problem 8](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/problem8/ProblemStatement.md) |A unival tree (which stands for "universal value") is a tree where all nodes under it have the same value.
+Given the root to a binary tree, count the number of unival subtrees.
+
+    [See Solution here](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/problem8/CountUnivalSubTree.java)
+
+10.  [Problem 10](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/problem7/ProblemStatement.md) | Implement a job scheduler which takes in a function f and an integer n, and calls f after n milliseconds.
+
+    [See Solution here](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/Problem10/JobSceduler.java)
+
+    
+    
