@@ -46,7 +46,7 @@ Given the root to a binary tree, count the number of unival subtrees.
 
      [See Solution here](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/problem9/MaxSumNonAdjcArray.java)
      
-10.  [Problem 10](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/problem10/ProblemStatement.md) | Implement a job scheduler which takes in a function f and an integer n, and calls f after n milliseconds.
+10.  [Problem 10](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/Problem10/ProblemStatement.md) | Implement a job scheduler which takes in a function f and an integer n, and calls f after n milliseconds.
 
      [See Solution here](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/Problem10/JobSceduler.java)
      
