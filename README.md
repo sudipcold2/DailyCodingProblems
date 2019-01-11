@@ -41,10 +41,22 @@ def cons(a, b): def pair(f): return f(a, b) return pair Implement car and cdr.
 Given the root to a binary tree, count the number of unival subtrees.
 
      [See Solution here](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/problem8/CountUnivalSubTree.java)
+     
+9.  [Problem 9](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/problem9/ProblemStatement.md) | Given a list of integers, write a function that returns the largest sum of non-adjacent numbers. Numbers can be 0 or negative.
 
-10.  [Problem 10](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/problem7/ProblemStatement.md) | Implement a job scheduler which takes in a function f and an integer n, and calls f after n milliseconds.
+     [See Solution here](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/problem9/MaxSumNonAdjcArray.java)
+     
+10.  [Problem 10](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/problem10/ProblemStatement.md) | Implement a job scheduler which takes in a function f and an integer n, and calls f after n milliseconds.
 
      [See Solution here](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/Problem10/JobSceduler.java)
+     
+11.  [Problem 11](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/problem11/ProblemStatement.md) | Implement an autocomplete system. That is, given a query string s and a set of all possible query strings, return all strings in the set that have s as a prefix.
 
-    
-    
+     [See Solution here](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/problem11/Trie.java)
+     
+12.  [Problem 12](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/problem12/ProblemStatement.md) | There exists a staircase with N steps, and you can climb up either 1 or 2 steps at a time. Given N, write a function that returns the number of unique ways you can climb the staircase. The order of the steps matters.
+
+     [See Solution here](https://github.com/sudipcold2/DailyCodingProblems/blob/master/src/main/java/problem12/StairCaseDP.java)
+     
+     
+ 
